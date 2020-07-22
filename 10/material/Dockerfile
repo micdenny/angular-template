@@ -15,6 +15,8 @@ RUN ng add @angular/material --interactive false && \
     ng generate @angular/material:navigation navigation --export --interactive false && \
     ng g module dashboard --module app --interactive false && \
     ng generate @angular/material:dashboard dashboard --export --interactive false && \
+    sed -i 's+<!-- Add Content Here -->+<ng-content></ng-content>+g' ./src/app/navigation/navigation.component.html && \
+    echo -e "<app-navigation>\n    <app-dashboard></app-dashboard>\n</app-navigation>" > ./src/app/app.component.html && \
     git add . && \
     git commit -m "Angular material design"
 
