@@ -23,17 +23,17 @@ docker build -t angular-template:latest-material ./latest/material
 ### Blank container
 
 ```shell
-docker run -id --name angular-sample-9 angular-template:9
-docker run -id --name angular-sample-10 angular-template:10
-docker run -id --name angular-sample-latest angular-template:latest
+docker run -id --name angular-sample-9 micdenny/angular-template:9
+docker run -id --name angular-sample-10 micdenny/angular-template:10
+docker run -id --name angular-sample-latest micdenny/angular-template:latest
 ```
 
 ### Material container
 
 ```shell
-docker run -id --name angular-sample-9-material angular-template:9-material
-docker run -id --name angular-sample-10-material angular-template:10-material
-docker run -id --name angular-sample-latest-material angular-template:latest-material
+docker run -id --name angular-sample-9-material micdenny/angular-template:9-material
+docker run -id --name angular-sample-10-material micdenny/angular-template:10-material
+docker run -id --name angular-sample-latest-material micdenny/angular-template:latest-material
 ```
 
 Then use the "Remote - Containers" extension of vscode to "Attach to running container"
