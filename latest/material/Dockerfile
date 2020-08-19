@@ -21,6 +21,7 @@ RUN ng add @angular/material --interactive false && \
     git commit -m "Angular material design"
 
 RUN ng build && \
-    rm -rf dist
+    rm -rf dist && \
+    rm -f $HOME/.gitconfig
 
 CMD [ "/bin/sh" ]
