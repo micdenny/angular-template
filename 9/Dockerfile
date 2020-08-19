@@ -11,6 +11,7 @@ RUN ng new --routing true --style scss --strict --interactive false ng-app
 WORKDIR /ng-app
 
 RUN ng build && \
-    rm -rf dist
+    rm -rf dist && \
+    rm -f $HOME/.gitconfig
 
 CMD [ "/bin/sh" ]
