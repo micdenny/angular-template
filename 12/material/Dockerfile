@@ -1,10 +1,10 @@
-FROM node:lts-alpine
+FROM node:14-alpine
 
 RUN apk update && \
     apk add git && \
     git config --global user.email "root@root.root" && \
     git config --global user.name "root" && \
-    npm install -g @angular/cli
+    npm install -g @angular/cli@^12.0.0
 
 RUN ng new --routing true --style scss --strict --interactive false ng-app
 
