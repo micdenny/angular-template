@@ -1,0 +1,36 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image (latest)
+      run: docker build . --file latest/Dockerfile --no-cache --tag angular-template:$(date +%s)
+    - name: Build the Docker image (material latest)
+      run: docker build . --file latest/material/Dockerfile --no-cache --tag angular-template:$(date +%s)
+    - name: Build the Docker image (v9)
+      run: docker build . --file 9/Dockerfile --no-cache --tag angular-template:$(date +%s)
+    - name: Build the Docker image (material v9)
+      run: docker build . --file 9/material/Dockerfile --no-cache --tag angular-template:$(date +%s)
+    - name: Build the Docker image (v10)
+      run: docker build . --file 10/Dockerfile --no-cache --tag angular-template:$(date +%s)
+    - name: Build the Docker image (material v10)
+      run: docker build . --file 10/material/Dockerfile --no-cache --tag angular-template:$(date +%s)
+    - name: Build the Docker image (v11)
+      run: docker build . --file 11/Dockerfile --no-cache --tag angular-template:$(date +%s)
+    - name: Build the Docker image (material v11)
+      run: docker build . --file 11/material/Dockerfile --no-cache --tag angular-template:$(date +%s)
+    - name: Build the Docker image (v12)
+      run: docker build . --file 12/Dockerfile --no-cache --tag angular-template:$(date +%s)
+    - name: Build the Docker image (material v12)
+      run: docker build . --file 12/material/Dockerfile --no-cache --tag angular-template:$(date +%s)
